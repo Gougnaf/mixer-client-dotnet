@@ -9,6 +9,7 @@ namespace MixerClient.Models.Channel
         public String token;
         public bool online;
         public bool featured;
+        public int? featureLevel;
         public bool partnered;
         public bool transcodingEnabled;
         public bool suspended;
@@ -22,20 +23,28 @@ namespace MixerClient.Models.Channel
         public int numFollowers;
         public int numSubscribers;
         public String description;
-        public int typeId;
+        public int? typeId;
         public DateTime createdAt;
         public DateTime updatedAt;
         public int userId;
-        public int coverId;
-        public int thumbnailId;
-        public int badgeId;
-        public int interactiveGameId;
+        public int? coverId;
+        public int? thumbnailId;
+        public int? badgeId;
+        public int? interactiveGameId;
         public MixerResource thumbnail;
         public MixerResource cover;
         public MixerResource badge;
         public Type type;
         public Dictionary<String, Object> preferences;
         public MixerUser user;
+        public object transcodingProfileId { get; set; }
+        public int ftl { get; set; }
+        public int? bannerUrl { get; set; }
+        public object hosteeId { get; set; }
+        public bool hasTranscodes { get; set; }
+        public bool vodsEnabled { get; set; }
+        public object costreamId { get; set; }
+        public object deletedAt { get; set; }
 
         public class Type
         {
@@ -47,13 +56,6 @@ namespace MixerClient.Models.Channel
             public int viewersCurrent;
             public int online;
             public String coverUrl;
-        }
-
-        public enum CostreamPreference
-        {
-            ALL,
-            FOLLOWING,
-            NONE
         }
 
         public enum AudienceRating

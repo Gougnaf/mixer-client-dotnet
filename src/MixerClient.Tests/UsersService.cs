@@ -11,7 +11,7 @@ namespace MixerClient.Tests
         {
             MixerAPI mixer = new MixerAPI("oauthCode");
             MixerUser user = mixer.UsersService.GetCurrentAsync().Result;
-            Assert.Equal(user.username, "Merlin");
+            Assert.Equal(user.username, "Gougnaf");
         }
     }
 }
