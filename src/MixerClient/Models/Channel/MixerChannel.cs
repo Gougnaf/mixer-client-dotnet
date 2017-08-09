@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace MixerClient.Models.Channel
 {
@@ -39,7 +42,7 @@ namespace MixerClient.Models.Channel
         public MixerUser user;
         public object transcodingProfileId { get; set; }
         public int ftl { get; set; }
-        public int? bannerUrl { get; set; }
+        public String bannerUrl { get; set; }
         public object hosteeId { get; set; }
         public bool hasTranscodes { get; set; }
         public bool vodsEnabled { get; set; }
@@ -58,10 +61,14 @@ namespace MixerClient.Models.Channel
             public String coverUrl;
         }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         public enum AudienceRating
         {
+            [EnumMember(Value = "family")]
             FAMILY,
+            [EnumMember(Value = "teen")]
             TEEN,
+            [EnumMember(Value = "18+")]
             ADULT
         }
     }
