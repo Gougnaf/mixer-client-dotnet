@@ -8,7 +8,7 @@ namespace MixerClient.Http
         public readonly HttpClient Http;        
         private string _oauthToken;
 
-        public MixerHttpClient(Uri basePath, string oauthToken)
+        public MixerHttpClient(Uri basePath, string oauthToken = null)
         {
             this.Http = new HttpClient() { BaseAddress = basePath };
 

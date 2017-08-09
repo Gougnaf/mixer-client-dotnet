@@ -12,7 +12,7 @@ namespace MixerClient
 
         public readonly MixerHttpClient Http;
 
-        public MixerAPI(string oauthToken)
+        public MixerAPI(string oauthToken = null)
         {
             this.Http = new MixerHttpClient(DEFAULT_BASE_PATH, oauthToken);
             this.UsersService = new UsersService(this);
